@@ -1,5 +1,6 @@
 package com.numbersir.middleearthdelight;
 
+import com.numbersir.middleearthdelight.block.ModBlocks;
 import com.numbersir.middleearthdelight.item.ModItemGroups;
 import com.numbersir.middleearthdelight.item.ModItems;
 import net.fabricmc.api.ModInitializer;
@@ -15,5 +16,6 @@ public class MiddleEarthDelight implements ModInitializer {
 	public void onInitialize() {
 		ModItems.registerModItems();
 		ModItemGroups.registerItemGroups();
+		ModBlocks.registerModBlocks();
 	}
 }

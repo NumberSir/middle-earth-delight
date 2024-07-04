@@ -5,7 +5,18 @@
 	"name": "Middle-earth Delight",
 	"description": "Addon for Middle-earth & Farmer's Delight.",
 	"authors": [
-		"Number_Sir"
+		{
+			"name": "Number_Sir",
+			"contact": {
+				"email": "number_sir@126.com",
+				"homepage": "https://github.com/NumberSir",
+				"issues": "https://github.com/NumberSir/middle-earth-delight/issues",
+				"sources": "https://github.com/NumberSir/middle-earth-delight"
+			}
+		},
+		{
+			"name": "Wanderer_ASH"
+		}
 	],
 	"contact": {
 		"email": "number_sir@126.com",
