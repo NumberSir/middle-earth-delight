@@ -1,0 +1,44 @@
+{
+	"schemaVersion": 1,
+	"id": "middleearthdelight",
+	"version": "${version}",
+	"name": "Middle-earth Delight",
+	"description": "Addon for Middle-earth & Farmer's Delight.",
+	"authors": [
+		"Number_Sir"
+	],
+	"contact": {
+		"email": "number_sir@126.com",
+		"homepage": "https://github.com/NumberSir",
+		"issues": "https://github.com/NumberSir/middle-earth-delight/issues",
+		"sources": "https://github.com/NumberSir/middle-earth-delight"
+	},
+	"license": "MIT",
+	"icon": "assets/middle-earth-delight/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.numbersir.middleearthdelight.MiddleEarthDelight"
+		],
+		"client": [
+			"com.numbersir.middleearthdelight.MiddleEarthDelightClient"
+		],
+		"fabric-datagen": [
+			"com.numbersir.middleearthdelight.MiddleEarthDelightDataGenerator"
+		]
+	},
+	"mixins": [
+		"middleearthdelight.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.15.11",
+		"minecraft": "~1.20.1",
+		"java": ">=17",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*",
+		"me": ">=alpha-1.4.2-1.20.1",
+		"farmersdelight": ">=1.20.1-2.1.1"
+	}
+}
