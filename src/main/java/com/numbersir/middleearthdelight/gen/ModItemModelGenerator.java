@@ -26,7 +26,7 @@ public class ModItemModelGenerator extends FabricModelProvider {
     @Override
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {
         itemModelGenerator.register(ModItems.LEMBAS_HUOGUO, Models.GENERATED);
-        itemModelGenerator.register(ModItems.ATHELAS_SALAD, Models.GENERATED);
+        itemModelGenerator.register(ModItems.ATHELAS_TEA, Models.GENERATED);
 
         itemModelGenerator.register(ModBlocks.ELVEN_STOVE.asItem(), registerItemBlock(ModBlocks.ELVEN_STOVE));
         itemModelGenerator.register(ModBlocks.MALLORN_PANTRY.asItem(), registerItemBlock(ModBlocks.MALLORN_PANTRY));

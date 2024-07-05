@@ -23,7 +23,7 @@ public class ModItemGroups {
                     .icon(() -> new ItemStack(ModItems.LEMBAS_HUOGUO))
                     .entries((displayContext, entries) -> {
                         entries.add(ModItems.LEMBAS_HUOGUO);
-                        entries.add(ModItems.ATHELAS_SALAD);
+                        entries.add(ModItems.ATHELAS_TEA);
                     }).build());
 
     public static final ItemGroup ITEMGROUP_BLOCKS = Registry.register(

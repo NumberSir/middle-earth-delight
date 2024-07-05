@@ -5,9 +5,25 @@
 
 ### 食物
 
+```groovy
+loom {
+  runs {
+    datagen {
+      client()
+
+      name "Data Generation"
+      vmArg "-Dfabric-api.datagen"
+      vmArg "-Dfabric-api.datagen.output-dir=${file("src/generated/resources")}"
+      vmArg "-Dfabric-api.datagen.modid=<你的模组id>"
+      vmArg "-Dporting_lib.datagen.existing_resources=${file("src/main/resources")}"
+    }
+  }
+}
+```
+
 - 灰油菊：
-    - [ ] 伊奥温炖肉 - 走马灯
     - [ ] 阿塞拉斯茶 - 治头痛
+    - [ ] 伊奥温炖肉 - 走马灯
     - [ ] 肉派
         - 普通肉派
         - 人肉派 - 斜体区分 不同阵营吃效果不同

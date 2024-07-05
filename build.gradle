@@ -10,11 +10,49 @@ base {
 	archivesName = project.archives_base_name
 }
 
-repositories {
+// from Nether's Delight Refabricated
+sourceSets.main.resources {
+	srcDirs += 'src/generated/resources'
 }
 
-fabricApi {
-	configureDataGeneration()
+repositories {
+	maven {
+		name = "Greenhouse Maven"
+		url = "https://maven.greenhouseteam.dev/releases/"
+	} // Farmer's Delight Refabricated
+	maven { url "https://mvn.devos.one/releases/" } // Porting Lib
+    maven {
+        url "https://maven.jamieswhiteshirt.com/libs-release"
+        content { includeGroup "com.jamieswhiteshirt" }
+    } // Reach Entity Attributes (Required by Porting Lib)
+    maven {
+        url "https://jitpack.io/"
+        content { excludeGroup "io.github.fabricators_of_create" }
+    } // Fabric ASM
+
+	maven {
+		url "https://www.cursemaven.com"
+		content { includeGroup "curse.maven" }
+	}  // Curseforge
+}
+
+//fabricApi {
+//	configureDataGeneration()
+//}
+
+// 不知道为什么，在有 porting-lib 的情况下用默认的 datagen 会报错：Missing loottable
+loom {
+	runs {
+		datagen {
+			client()
+
+			name "Data Generation"
+			vmArg "-Dfabric-api.datagen"
+			vmArg "-Dfabric-api.datagen.output-dir=${file("src/generated/resources")}"
+			vmArg "-Dfabric-api.datagen.modid=middleearthdelight"
+			vmArg "-Dporting_lib.datagen.existing_resources=${file("src/main/resources")}"
+		}
+	}
 }
 
 dependencies {
@@ -23,7 +61,8 @@ dependencies {
 	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
-	
+	modImplementation("vectorwing:FarmersDelight:${fdrf_version}") { exclude(group: "net.fabricmc") }
+	modImplementation "curse.maven:middleearth-${me_project}:${me_file}"
 }
 
 processResources {
